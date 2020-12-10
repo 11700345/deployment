@@ -27,6 +27,8 @@ spec:
             containerPort: 80
           - name: nodejs-port
             containerPort: 4200
+          - name: ssl-port
+            containerPort: 443
 #        volumeMounts:
 #          - name: talentmanager-backend-data
 #            mountPath: "/var/talentmanager-backend_home"
@@ -56,6 +58,10 @@ spec:
       port: 4200
       targetPort: 4200
       nodePort: 30420
+    - name: ssl-port
+      port: 443
+      targetPort: 443
+      nodePort: 30443
   selector:
     app: talentmanager-frontend
   externalIPs:
