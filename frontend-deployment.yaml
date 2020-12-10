@@ -25,8 +25,8 @@ spec:
         ports:
           - name: http-port
             containerPort: 80
-          - name: jnlp-port
-            containerPort: 50000
+          - name: nodejs-port
+            containerPort: 4200
 #        volumeMounts:
 #          - name: talentmanager-backend-data
 #            mountPath: "/var/talentmanager-backend_home"
@@ -48,9 +48,14 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 80
+    - name: http
+      port: 80
       targetPort: 80
       nodePort: 30005
+    - name: nodejs
+      port: 4200
+      targetPort: 4200
+      nodePort: 30420
   selector:
     app: talentmanager-frontend
   externalIPs:
