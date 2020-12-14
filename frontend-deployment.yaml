@@ -17,11 +17,6 @@ spec:
       containers:
       - name: talentmanager-frontend
         image: 11700345/talentmanager-frontend:latest
-#        env:
-#        - name: DB_USERNAME
-#          value: bewire_1
-#        - name: DB_PASSWORD
-#          value: PXsql2020
         ports:
           - name: http-port
             containerPort: 80
@@ -29,19 +24,6 @@ spec:
             containerPort: 4200
           - name: ssl-port
             containerPort: 443
-#        volumeMounts:
-#          - name: talentmanager-backend-data
-#            mountPath: "/var/talentmanager-backend_home"
-#          - mountPath: /var/run/docker.sock
-#            name: dockersock
-#            readOnly: false
-#      volumes:
-#        - name: talentmanager-backend-data
-#          persistentVolumeClaim:
-#            claimName: talentmanager-backendgluster-claim
-#        - name: dockersock
-#          hostPath:
-#            path: /var/run/docker.sock
 ---
 apiVersion: v1
 kind: Service
