@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: talentmanager-backend-production-deployment
+  labels:
+    app: talentmanager-backend-production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: talentmanager-backend-production
+  template:
+    metadata:
+      labels:
+        app: talentmanager-backend-production
+    spec:
+      containers:
+      - name: talentmanager-backend-production
+        image: 10.128.14.150/bewire/talentmanager-backend-production:latest
+        ports:
+          - name: http-port
+            containerPort: 8080
+          - name: jnlp-port
+            containerPort: 50000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: talentmanager-backend-production
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30002
+  selector:
+    app: talentmanager-backend-production
+  externalIPs:
+    - 10.128.14.27
