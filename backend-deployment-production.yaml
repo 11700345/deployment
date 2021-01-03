@@ -36,4 +36,4 @@ spec:
   selector:
     app: talentmanager-backend-production
   externalIPs:
-    - 10.128.14.27
+    - 10.128.14.28
