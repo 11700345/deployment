@@ -43,8 +43,8 @@ spec:
     - name: ssl-port
       port: 443
       targetPort: 443
-      nodePort: 30443
+      nodePort: 33333
   selector:
     app: talentmanager-frontend
   externalIPs:
-    - 10.128.14.27
+    - 10.128.14.29
