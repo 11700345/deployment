@@ -30,15 +30,12 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - name: http
-      port: 80
-      targetPort: 80
       nodePort: 30005
     - name: nodejs
       port: 4200
       targetPort: 4200
       nodePort: 30420
-    - name: ssl-port
+    - name: http
       port: 443
       targetPort: 443
       nodePort: 33333
