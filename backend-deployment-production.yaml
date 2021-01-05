@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: talentmanager-backend-production
-        #image: 10.128.14.150/bewire/talentmanager-backend-production:latest
-        image: 11700345/talentmanager-backend:latest
+        image: 10.128.14.150/bewire/talentmanager-backend-production:latest
+        #image: 11700345/talentmanager-backend:latest
         ports:
           - name: http-port
             containerPort: 8080
