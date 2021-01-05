@@ -18,7 +18,7 @@ spec:
       - name: talentmanager-frontend
         image: 11700345/talentmanager-frontend:latest
         ports:
-          - name: http-port
+          - name: http-ports
             containerPort: 443
           - name: nodejs-port
             containerPort: 4200
@@ -30,12 +30,11 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-      nodePort: 30005
     - name: nodejs
       port: 4200
       targetPort: 4200
       nodePort: 30420
-    - name: http
+    - name: https
       port: 443
       targetPort: 443
       nodePort: 33333
