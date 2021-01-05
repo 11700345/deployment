@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: talentmanager-frontend-deployment
+  name: talentmanager-frontend-production-deployment
   labels:
-    app: talentmanager-frontend
+    app: talentmanager-frontend-production
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: talentmanager-frontend
+      app: talentmanager-frontend-production
   template:
     metadata:
       labels:
-        app: talentmanager-frontend
+        app: talentmanager-frontend-production
     spec:
       containers:
-      - name: talentmanager-frontend
-        image: 11700345/talentmanager-frontend:latest
+      - name: talentmanager-frontend-production
+        image: 11700345/talentmanager-frontend-production:latest
         ports:
           - name: https-ports
             containerPort: 443
@@ -26,7 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: talentmanager-frontend
+  name: talentmanager-frontend-production
 spec:
   type: LoadBalancer
   ports:
@@ -39,6 +39,6 @@ spec:
       targetPort: 443
       nodePort: 33333
   selector:
-    app: talentmanager-frontend
+    app: talentmanager-frontend-production
   externalIPs:
     - 10.128.14.29
