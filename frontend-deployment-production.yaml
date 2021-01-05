@@ -18,7 +18,7 @@ spec:
       - name: talentmanager-frontend
         image: 11700345/talentmanager-frontend:latest
         ports:
-          - name: http-ports
+          - name: https-ports
             containerPort: 443
           - name: nodejs-port
             containerPort: 4200
