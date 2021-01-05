@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: talentmanager-frontend-production
-        image: 11700345/talentmanager-frontend-production:latest
+        image: 10.128.14.150/bewire/talentmanager-frontend-production
         ports:
           - name: https-ports
             containerPort: 443
@@ -33,11 +33,11 @@ spec:
     - name: nodejs
       port: 4200
       targetPort: 4200
-      nodePort: 30420
+      nodePort: 32220
     - name: https
       port: 443
       targetPort: 443
-      nodePort: 33333
+      nodePort: 32333
   selector:
     app: talentmanager-frontend-production
   externalIPs:
