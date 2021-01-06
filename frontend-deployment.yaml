@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: talentmanager-frontend
-        #image: 10.128.14.150/bewire/talentmanager-frontend:latest
-        image: 11700345/talentmanager-frontend:latest
+        image: 10.128.14.150/bewire/talentmanager-frontend:latest
+        #image: 11700345/talentmanager-frontend:latest
         ports:
           - name: http-port
             containerPort: 80
